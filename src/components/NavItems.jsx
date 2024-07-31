@@ -47,11 +47,11 @@ const NavItems = () => {
                                     <li><Link to="/shop">Shop</Link></li>
                                     <li><Link to="/blog">Blog</Link></li>
                                     <li><Link to="/about">About</Link></li>
-                                    <li><Link to="/contact">Contaact</Link></li>
+                                    <li><Link to="/contact">Contact</Link></li>
                                 </ul>
                             </div>
                             <Link to="sign-up" className='lab-btn m3-3 d-none d-md-block'>Create Account</Link>
-                            <Link to="/login" className='d-none d-md-block pl-2 pl-md-4'>Log In</Link>
+                            <Link to="/login" className='padding-3' >Log In</Link>
                             <div onClick={()=> setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : "" }`}>
                                 <span></span>
                                 <span></span>

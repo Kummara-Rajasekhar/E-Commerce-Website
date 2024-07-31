@@ -42,13 +42,13 @@ const clientsList = [
         imgAlt: 'education thumb rajibraj91 rajibraj',
         text: 'Join with Us',
     },
-]
+];
 
 
 
 const LocationSprade = () => {
     return (
-        <div className='client-section style-2 padding-tb'>
+        <div className="clients-section style-2 padding-tb">
             <div className="container">
                 <div className='section-header text-center'>
                     <h2 className="title">{title}</h2>
@@ -77,6 +77,8 @@ const LocationSprade = () => {
 
         </div>
     )
+
+    
 }
 
 export default LocationSprade;

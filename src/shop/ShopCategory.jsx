@@ -1,7 +1,7 @@
 import React from 'react'
 import { isValidElement } from 'react'
 
-const ShopCategory = ({filterItem,setItem,menuItems,setProducts,selectedcatedory}) => {
+const ShopCategory = ({filterItem,setItem,menuItems,setProducts,selectedCategory}) => {
   return (
     <>
     <div className='widget-header'>
@@ -15,8 +15,8 @@ const ShopCategory = ({filterItem,setItem,menuItems,setProducts,selectedcatedory
         {
             menuItems.map((val,id)=>{
                 return(
-                    <button className={`m-2 ${selectedcatedory===val ? "bg-warning":""}`} key={id} onClick={()=> filterItem(val)}>
-                       {isValidElement}
+                    <button className={`m-2 ${selectedCategory===val ? "bg-warning":""}`} key={id} onClick={()=> filterItem(val)}>
+                       {val}
                     </button>
                 )
             })

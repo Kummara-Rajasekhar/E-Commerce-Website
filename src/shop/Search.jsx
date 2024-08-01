@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-const Search = ({products,GridList}) => {
+const Search = ({products,gridList}) => {
     const [searchTerm,setSearchTerm]=useState("");
     const filteredProducts=products.filter((product)=> product.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
@@ -16,7 +16,7 @@ const Search = ({products,GridList}) => {
         </form>
         <div>
             {
-                searchTerm&& filteredProducts.map((products)=>(
+                searchTerm&& filteredProducts.map((product)=>(
                     <Link key={product.id} to={`/shop/${product.id}`}>
                         <div className="d-flex gap-3 p-2">
                             <div>

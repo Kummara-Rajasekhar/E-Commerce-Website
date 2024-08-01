@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import PageHeader from '../components/PageHeader'
 
 const Shop = () => {
@@ -9,10 +9,10 @@ const Shop = () => {
   )
 }
 
-export default Shop 
+export default Shop  */
 
 
-/* 
+
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 
@@ -23,40 +23,51 @@ import  Pagination  from "./Pagination.jsx";
 import Search from './Search.jsx';
 import ShopCategory from './ShopCategory.jsx';
 
-const [currentPage, setCurrentPage] = useState(1);
-const productsPerPage=12;
+
+ 
+    
 
 
-const indexOfLastProduct=currentPage* productsPerPage;
-const indexOfFirstProduct= indexOfLastProduct- productsPerPage;
 
-const currentProducts= products.slice(indexOfFirstProduct,indexOfLastProduct);
 
-const paginate= (pageNumber)=> {
-    setCurrentPage(pageNumber)
-};
-const [selectedCategory,setSelectedcategory]=useState("All");
-const menuItems=[...new Set(Data.map((val)=>val.vat.category))];
-const filterItem=(curcat)=>{
+
+ 
+const Shop = () => {
+
+
+    const [gridList,setGridList]=useState(true);
+    const [products, setProducts] = useState(Data);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage=12;
+    
+    const indexOfLastProduct=currentPage* productsPerPage
+    const indexOfFirstProduct= indexOfLastProduct- productsPerPage;
+
+    const currentProducts= products.slice(indexOfFirstProduct,indexOfLastProduct);
+    const paginate= (pageNumber)=> {
+        setCurrentPage(pageNumber)
+    }
+
+
+   const [selectedCategory,setSelectedCategory]=useState("All");
+   const menuItems=[...new Set(Data.map((val)=>val.category))];
+   const filterItem=(curcat)=>{
     const newItem=Data.filter((newval)=>{
         return newval.category===curcat;
     })
-    setSelectedcategory(curcat);
+    setSelectedCategory(curcat);
     setProducts(newItem);
-};
- 
-const Shop = () => {
-    const [gridList,setGridList]=useState(true);
-    const [products, setProducts] = useState(Data);
+   }
+   const all=products;
   return (
     <div>
         <PageHeader title="Our Shop Page" curPage="Shop"/>
-        <div className='shop-page padding-tb'>
+        <div className="shop-page padding-tb">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-8 col-12">
                         <article>
-                            <div className='shop-title d-flex flex-wrap justify-content-between'>
+                            <div className="shop-title d-flex flex-wrap justify-content-between">
                                 <p>
                                     {showResults}
                                 </p>
@@ -71,7 +82,7 @@ const Shop = () => {
                                 </div>
                             </div>
                             <div>
-                                 <ProductCard gridList={gridList} products={currentProducts}/>
+                                 <ProductCard gridList={gridList} products={products}/>
                             </div>
                             <Pagination
                             productsPerPage={productsPerPage}
@@ -83,13 +94,14 @@ const Shop = () => {
                     </div>
                     <div className="col-lg-4 col-12">
                         <aside>
-                            <Search products={products}  />
+                            <Search products={products} gridList={gridList} />
                             <ShopCategory 
                             filterItem={filterItem}
                             setItem={setProducts}
                             menuItems={menuItems}
                             setProducts={setProducts}
                             selectedCategory={selectedCategory}
+                            products={products}
                             />
                         </aside>
                     </div>
@@ -101,7 +113,7 @@ const Shop = () => {
   )
 }
 
-export default Shop;  */
+export default Shop;
 
 
 

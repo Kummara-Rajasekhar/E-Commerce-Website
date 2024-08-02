@@ -22,6 +22,8 @@ import ProductCard from "./ProductCard";
 import  Pagination  from "./Pagination.jsx";
 import Search from './Search.jsx';
 import ShopCategory from './ShopCategory.jsx';
+import PopularPost from './PopularPost.jsx';
+import Tags from './Tags.jsx';
 
 
  
@@ -103,6 +105,8 @@ const Shop = () => {
                             selectedCategory={selectedCategory}
                             products={products}
                             />
+                            <PopularPost/>
+                            <Tags/>
                         </aside>
                     </div>
                 </div>

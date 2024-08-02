@@ -23,6 +23,8 @@ import {
 import Home from '/src/home/Home.jsx';
 import Blog from '/src/blog/Blog.jsx';
 import Shop from './shop/Shop.jsx';
+import SingleProduct from './shop/SingleProduct.jsx';
+import Cartpage from './shop/Cartpage.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,8 @@ const router = createBrowserRouter([
       {path: "/",element:<Home/>},
       {path: "/blog",element:<Blog/>},
       {path: "/shop",element:<Shop/>},
+      {path: "shop/:id",element:<SingleProduct/>},
+      {path: "/cart-page",element:<Cartpage/>},
     ],
    
   },

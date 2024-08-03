@@ -34,7 +34,7 @@ const ProductDisplay = ({item}) => {
             size:size,
             color:color,
             coupon:coupon
-        }
+        };
         const existingCart=JSON.parse(localStorage.getItem("cart"))||[];
         const existingProductIndex=existingCart.findIndex((item)=>item.id==id);
         
@@ -51,7 +51,7 @@ const ProductDisplay = ({item}) => {
         setSize("Select Size");
         setColor("Select Color");
         setCoupon("");
-    }
+    };
   return (
     <div>
         <div>
@@ -70,7 +70,7 @@ const ProductDisplay = ({item}) => {
         </div>
 
         <div>
-            <form action=""onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="select-product size">
                     <select name="" id="" value={size} onChange={handleSizeChanger}>
                         <option value="Select Size">Select Size</option>
@@ -103,11 +103,11 @@ const ProductDisplay = ({item}) => {
                     <input type="text" placeholder='Enter Discount Code' onChange={(e)=>setCoupon(e.target.value)} />
                 </div>
 
-                <button type='submit' className='lab-btn'>
+                <button type='submit'  className='lab-btn'>
                     Add to Cart
                 </button>
                 
-                <Link type='/cart-page'className='lab-btn bg-primary'>
+                <Link to='/cart-page'className='lab-btn bg-primary'>
                     <span>Check Out</span>
                 </Link>
             </form>

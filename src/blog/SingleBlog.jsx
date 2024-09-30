@@ -9,7 +9,6 @@ const socialList = [{ iconName: 'icofont-facebook', siteLink: '#', className: 'f
 const SingleBlog = () => {
   const [blog, setblog] = useState(blogList);
   const { id } = useParams();
-  /*  console.log(id); */
   const result = blog.filter((p) => p.id == Number(id));
   return (
     <div>

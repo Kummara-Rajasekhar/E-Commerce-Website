@@ -77,15 +77,15 @@ const SingleBlog = () => {
                                       </li>
                                     </ul>
                                     <ul className="lab-ul social-icons">
-                                       {
-                                        socialList.map((val,i)=>(
-                                            <li key={i}>
-                                               <a href="#" className={val.className}>
+                                      {
+                                        socialList.map((val, i) => (
+                                          <li key={i}>
+                                            <a href="#" className={val.className}>
                                               <i className={val.iconName}></i>
-                                               </a>
-                                            </li>
+                                            </a>
+                                          </li>
                                         ))
-                                       }
+                                      }
                                     </ul>
                                   </div>
                                 </div>
@@ -106,7 +106,7 @@ const SingleBlog = () => {
                           Previous BLog
                         </a>
                         <a href="#" className='title'>
-                           Evisculate Parallel Processes via Techmica Sound MOdels Authoritative
+                          Evisculate Parallel Processes via Techmica Sound MOdels Authoritative
                         </a>
                       </div>
                       <div className="right">
@@ -117,7 +117,7 @@ const SingleBlog = () => {
                           </i>
                         </a>
                         <a href="#" className='title'>
-                           Evisculate Parallel Processes via Techmica Sound MOdels Authoritative
+                          Evisculate Parallel Processes via Techmica Sound MOdels Authoritative
                         </a>
                       </div>
                     </div>
@@ -127,8 +127,8 @@ const SingleBlog = () => {
             </div>
             <div className="col-lg-4 col-12">
               <aside>
-                <Tags/>
-                <PopularPost/>
+                <Tags />
+                <PopularPost />
               </aside>
             </div>
           </div>

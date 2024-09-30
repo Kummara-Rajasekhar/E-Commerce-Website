@@ -5,12 +5,12 @@ import './index.css'
 
 import 'swiper/css';
 
-// bootstrap css
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 
-// fonts and icons
+
 import '././assets/css/icofont.min.css';
 import '././assets/css/animate.css';
 import '././assets/css/style.min.css';
@@ -28,7 +28,11 @@ import Cartpage from './shop/Cartpage.jsx';
 import SingleBlog from './blog/SingleBlog.jsx';
 import About from './about/About.jsx';
 import ContactPage from './contactpage/ContactPage.jsx';
-
+import PrivateRouter from './privaterouter/PrivateRouter.jsx';
+import AuthProvider from './Context/AuthProvider.jsx';
+import Login from './components/Login.jsx';
+import Signup from './components/Signup.jsx';
+ 
 
 const router = createBrowserRouter([
   {
@@ -46,7 +50,19 @@ const router = createBrowserRouter([
     ],
    
   },
+{
+  path:"/login",
+  element:<Login/>
+},
+{
+  path:"sign-up",
+  element:<Signup/>
+},
+ 
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+ <AuthProvider>
+
+   <RouterProvider router={router} />
+   </AuthProvider>  
 )
